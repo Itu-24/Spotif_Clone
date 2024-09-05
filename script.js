@@ -54,6 +54,15 @@ audioElement.addEventListener('timeupdate', () => {
     myProgessbar.value = progress;
 
 
+    if(audioElement.currentTime==audioElement.duration){
+        myProgessbar.value = 0;
+        audioElement.pause();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-circle-play');
+        gif.style.opacity = 0;
+    }
+
+
 })
 
 myProgessbar.addEventListener('change', () => {
